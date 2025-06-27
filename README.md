@@ -106,7 +106,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Nithin1729S/Pixel-Plate.git
+    git clone https://github.com/amrita40/pixel-plate
     ```
 
 2. **Change .env files:**
@@ -176,7 +176,7 @@ To get started with this project, follow these steps:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/Nithin1729S/Pixel-Plate.git
+    git clone https://github.com/amrita40/pixel-plate
     ```
 2. **Pull the frontend Image:**
     [![Docker Image](https://img.shields.io/docker/v/nithin1729s/pixel-plate-frontend?label=Docker%20Hub&style=flat-square?label=Docker%20Hub&style=flat-square)](https://hub.docker.com/r/nithin1729s/pixel-plate-frontend)
