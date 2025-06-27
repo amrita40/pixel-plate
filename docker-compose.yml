@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: nithin1729s/pixel-plate-frontend:latest
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_AUTH0_DOMAIN=${VITE_AUTH0_DOMAIN}
+      - VITE_AUTH0_CLIENT_ID=${VITE_AUTH0_CLIENT_ID}
+      - VITE_AUTH0_CALLBACK_URL=${VITE_AUTH0_CALLBACK_URL}
+      - VITE_API_BASE_URL=${VITE_API_BASE_URL}
+      - VITE_AUTH0_AUDIENCE=${VITE_AUTH0_AUDIENCE}
+    
+  backend:
+    image: nithin1729s/pixel-plate-backend:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_CONNECTION_STRING=${MONGODB_CONNECTION_STRING}
+      - AUTH0_AUDIENCE=${AUTH0_AUDIENCE}
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
+      - STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET}
+      
+  stripe-cli:
+    image: stripe/stripe-cli
+    command: listen --forward-to backend:5000/api/order/checkout/webhook
+    environment:
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
+    depends_on:
+      - backend
