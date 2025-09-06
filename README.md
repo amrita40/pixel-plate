@@ -25,7 +25,6 @@ https://github.com/Nithin1729S/Pixel-Plate/assets/78496667/4095346a-4af8-4570-8c
 
 
 
-[Watch the Demo Video on YouTube](https://youtu.be/85GmE-L5dEo)
 
 
 ## Screenshots
